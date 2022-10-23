@@ -1,4 +1,3 @@
-from tabulate import tabulate
 from select import select
 
 
@@ -88,5 +87,17 @@ def print_all_contacts(data):
         listik.pop(0)
         data_to_print.append(listik)
 
+
+
+# Модуль tabulate
+from tabulate import tabulate
+data_to_print = []
+for i in range(len(print_all_contacts)):
+    list = list(print_all_contacts[i].values())
+    list.pop(0)
+    data_to_print.append(list)
+
+
     col_names = ["Фамилия", "Имя Отчество", "Должность", "Телефон", "Зарплата"]
-    print(tabulate(data_to_print, headers=col_names, tablefmt="fancy_grid", showindex="never"))
+ 
+print(tabulate(data_to_print, headers=col_names, tablefmt="fancy_grid", showindex="never"))
